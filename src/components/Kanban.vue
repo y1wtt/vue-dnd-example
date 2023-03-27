@@ -39,12 +39,13 @@ const onCut = (event: { index: number; data: string }) => {
     @reorder="$event.apply(items)"
     mode="cut"
     class="kanban"
+    :id="items.toString()"
   >
     <template v-slot:item="{ item }">
       <drag class="item" :data="item" :key="item" @cut="onCut">{{ item }}</drag>
     </template>
     <template v-slot:feedback="{ data }">
-      <div class="item feedback" :key="data + 'feedback'">{{ data }}</div>
+      <div class="item feedback" :key="data">{{ data }}</div>
     </template>
   </drop-list>
 </template>
@@ -56,7 +57,8 @@ const onCut = (event: { index: number; data: string }) => {
   min-width: 250px;
 }
 .item {
-  padding: 20px 100px;
+  width: 200px;
+  padding: 20px;
   margin: 10px;
   background: #0352fc;
   text-align: center;
