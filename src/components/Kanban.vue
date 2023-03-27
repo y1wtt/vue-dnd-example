@@ -53,12 +53,13 @@ const onCut = (event: { index: number; data: string }) => {
 <style scoped>
 .kanban {
   margin: 0 20px;
+  border: solid 1px #000000;
   min-height: 10px;
   min-width: 250px;
 }
 .item {
   width: 200px;
-  padding: 20px;
+  padding: 15px;
   margin: 10px;
   background: #0352fc;
   text-align: center;
